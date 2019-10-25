@@ -5,7 +5,7 @@ import Footer from './Footer/Footer';
 import Piece from './Piece/Piece';
 
 class App extends Component {
-
+  // state with our test pieces for the game and scores
   state = {
     pieces: [
       { id: '0', name: 'Kyle', clicked: false },
@@ -25,6 +25,7 @@ class App extends Component {
     topScore: 0
   }
 
+  // possible one event handler to contain both functions occuring on button click
   onClick (event) {
     event.preventDefault();
 
@@ -32,6 +33,7 @@ class App extends Component {
     this.gameLogic()
   }
 
+  // function to shuffle the array around and re-render the game pieces (hopefully...)
   arrayShuffle (arr) {
     let currentIndex = arr.length, tempVal, randomIndex;
 
@@ -46,15 +48,19 @@ class App extends Component {
     this.setState( { pieces: arr } )
   }
 
+  // primary logic behind the score system in the game
   gameLogic (index) {
-
+    // grab variables from the state for easier reference
     const pieces = this.state.pieces
-
+    let currentScore = this.state.score
+    let topScore = this.state.topScore
+    // clicking an already-clicked button resets the score
     if (pieces[index].clicked === true) {
       this.setState( { score: 0 } )
     }
+    // clicking a non-clicked button adds score and changes clicked to true (supposed to anyway)
     if (pieces[index].clicked === false) {
-      this.setState( { score: +1, topScore: +1 } )
+      this.setState( { score: currentScore +1, topScore: topScore +1, clicked: true } )
     }
   }
 
