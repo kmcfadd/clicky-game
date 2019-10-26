@@ -51,16 +51,18 @@ class App extends Component {
   // primary logic behind the score system in the game
   gameLogic (index) {
     // grab variables from the state for easier reference
-    const pieces = this.state.pieces
-    let currentScore = this.state.score
-    let topScore = this.state.topScore
+    let pieces = this.state.pieces
     // clicking an already-clicked button resets the score
     if (pieces[index].clicked === true) {
       this.setState( { score: 0 } )
     }
     // clicking a non-clicked button adds score and changes clicked to true (supposed to anyway)
     if (pieces[index].clicked === false) {
-      this.setState( { score: currentScore +1, topScore: topScore +1, clicked: true } )
+      let stateCopy = Object.assign({}, this.state)
+      stateCopy.pieces[index].clicked = true
+      stateCopy.score += 1
+      stateCopy.topScore += 1
+      this.setState( { stateCopy } )
     }
   }
 
