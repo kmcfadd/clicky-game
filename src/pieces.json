@@ -1,0 +1,61 @@
+[
+    { 
+        "id": 0, 
+        "name": "Kyle",
+        "clicked": false
+    },
+    { 
+        "id": 1, 
+        "name": "Ghett", 
+        "clicked": false 
+    },
+    { 
+        "id": 2, 
+        "name": "Will", 
+        "clicked": false 
+    },
+    { 
+        "id": 3, 
+        "name": "Travis", 
+        "clicked": false 
+    },
+    { 
+        "id": 4, 
+        "name": "Stephen", 
+        "clicked": false 
+    },
+    { 
+        "id": 5, 
+        "name": "Ed", 
+        "clicked": false 
+    },
+    { 
+        "id": 6, 
+        "name": "Ryan", 
+        "clicked": false 
+    },
+    { 
+        "id": 7, 
+        "name": "Geno", 
+        "clicked": false 
+    },
+    { 
+        "id": 8, 
+        "name": "Frank", 
+        "clicked": false 
+    },
+    { 
+        "id": 9, 
+        "name": "Brian", 
+        "clicked": false },
+    { 
+        "id": 10, 
+        "name": "Connor", 
+        "clicked": false 
+    },
+    { 
+        "id": 11, 
+        "name": "Rebecca", 
+        "clicked": false 
+    }
+  ]

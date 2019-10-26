@@ -4,7 +4,7 @@ import './Piece.css'
 function Piece ( props ) {
 
     return (
-        <div className="Piece">
+        <div className="Piece" onClick={() => props.click(props.id)}>
             <p>My name is {props.name}</p>
         </div>
     )

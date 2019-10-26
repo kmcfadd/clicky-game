@@ -3,69 +3,75 @@ import './App.css';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import Piece from './Piece/Piece';
+import pieces from './pieces.json'
 
 class App extends Component {
   // state with our test pieces for the game and scores
-  state = {
-    pieces: [
-      { id: '0', name: 'Kyle', clicked: false },
-      { id: '1', name: 'Ghett', clicked: false },
-      { id: '2', name: 'Will', clicked: false },
-      { id: '3', name: 'Travis', clicked: false },
-      { id: '4', name: 'Stephen', clicked: false },
-      { id: '5', name: 'Ed', clicked: false },
-      { id: '6', name: 'Ryan', clicked: false },
-      { id: '7', name: 'Geno', clicked: false },
-      { id: '8', name: 'Frank', clicked: false },
-      { id: '9', name: 'Brian', clicked: false },
-      { id: '10', name: 'Connor', clicked: false },
-      { id: '11', name: 'Rebecca', clicked: false }
-    ],
-    score: 0,
-    topScore: 0
+  constructor (props) {
+
+      super(props);
+      this.state = 
+      { 
+        pieces: pieces,
+        score: 0,
+        topScore: 0
+      }
+      this.gameLogic = this.gameLogic.bind(this)
   }
+  
 
   // possible one event handler to contain both functions occuring on button click
-  onClick (event) {
-    event.preventDefault();
+  // onClick (event) {
+  //   event.preventDefault();
 
-    this.arrayShuffle(this.state.pieces)
-    this.gameLogic()
-  }
+  //   this.arrayShuffle(this.state.pieces)
+  //   this.gameLogic()
+  // }
 
   // function to shuffle the array around and re-render the game pieces (hopefully...)
-  arrayShuffle (arr) {
-    let currentIndex = arr.length, tempVal, randomIndex;
+  shuffle () {
+    const pieces = this.state.pieces.sort(() => .5 - Math.random())
+    this.setState( { pieces } )
+  }
 
-    while (0 !== currentIndex) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
+  componentDidMount () {
+    this.shuffle();
+  }
 
-      tempVal = arr[currentIndex];
-      arr[currentIndex] = arr[randomIndex];
-      arr[randomIndex] = tempVal;
-    }
-    this.setState( { pieces: arr } )
+  reset () {
+    const pieces = this.state.pieces.map(piece => piece.clicked = false )
+    this.setState( { pieces } )
   }
 
   // primary logic behind the score system in the game
-  gameLogic (index) {
-    // grab variables from the state for easier reference
-    let pieces = this.state.pieces
-    // clicking an already-clicked button resets the score
-    if (pieces[index].clicked === true) {
-      this.setState( { score: 0 } )
+  gameLogic = id => {
+    let clickedPiece = this.state.pieces.filter(piece => piece.id === id)[0]
+    let piecesCopy = this.state.pieces.slice().sort(() => .5 - Math.random())
+
+    if (!clickedPiece.clicked) {
+      clickedPiece.clicked = true;
+      piecesCopy[piecesCopy.findIndex((piece) => piece.id === id)] = clickedPiece;
+
+      this.setState({ 
+        pieces: piecesCopy, 
+        score: this.state.score + 1,
+        topScore: (this.state.score +1 > this.state.topScore ? this.state.score +1 : this.state.topScore)
+      })
     }
-    // clicking a non-clicked button adds score and changes clicked to true (supposed to anyway)
-    if (pieces[index].clicked === false) {
-      let stateCopy = Object.assign({}, this.state)
-      stateCopy.pieces[index].clicked = true
-      stateCopy.score += 1
-      stateCopy.topScore += 1
-      this.setState( { stateCopy } )
+    else {
+      let resetCopy = piecesCopy.map((piece) => {
+        return {
+          id: piece.id,
+          name: piece.name,
+          clicked: false
+        }
+      })
+      this.setState({
+        pieces: resetCopy, score: 0
+      })
     }
   }
-
+  
   render () {
 
     return (
@@ -73,12 +79,13 @@ class App extends Component {
         <Header 
         score={this.state.score}
         topScore={this.state.topScore} />
-        {this.state.pieces.map((piece, index) => {
-          return <Piece 
+        {this.state.pieces.map((piece, id) => {
+           return <Piece
             key={piece.id}
+            id={piece.id}
             name={piece.name}
             clicked={piece.clicked}
-            onClick={() => this.gameLogic(index)} 
+            click={this.gameLogic}
             />
         })} 
         <Footer />
