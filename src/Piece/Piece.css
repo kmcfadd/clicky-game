@@ -1,4 +1,4 @@
-.Piece {
+.hero-container {
     border: 1px solid black;
     width: 25%;
     display: inline-block;
@@ -6,4 +6,9 @@
     margin: 15px;
     height: auto;
     box-shadow: 5px 5px #ccc;
+}
+
+.hero {
+    width: 60%;
+    height: 80%;
 }

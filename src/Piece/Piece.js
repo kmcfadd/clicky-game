@@ -4,8 +4,12 @@ import './Piece.css'
 function Piece ( props ) {
 
     return (
-        <div className="Piece" onClick={() => props.click(props.id)}>
-            <p>My name is {props.name}</p>
+        <div className="hero-container">
+            <img className="hero"
+            src={props.image} 
+            alt={props.name}
+            onClick={() => props.click(props.id)}
+            />
         </div>
     )
 

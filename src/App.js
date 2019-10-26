@@ -48,6 +48,7 @@ class App extends Component {
         return {
           id: piece.id,
           name: piece.name,
+          image: piece.image,
           clicked: false
         }
       })
@@ -59,20 +60,29 @@ class App extends Component {
   
   render () {
 
+    const style = {
+      paddingBottom: "50px",
+      margin: "0 auto"
+  }
+
     return (
       <div className="App">
         <Header 
         score={this.state.score}
-        topScore={this.state.topScore} />
+        topScore={this.state.topScore} 
+        />
+      <div style={style}>
         {this.state.pieces.map((piece, id) => {
            return <Piece
             key={piece.id}
             id={piece.id}
             name={piece.name}
+            image={require(`${piece.image}`)}
             clicked={piece.clicked}
             click={this.clickChecker}
             />
         })} 
+      </div>
         <Footer />
       </div>
     );

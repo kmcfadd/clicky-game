@@ -1,61 +1,74 @@
 [
     { 
         "id": 0, 
-        "name": "Kyle",
+        "name": "Valla",
+        "image": "./images/valla.png",
         "clicked": false
     },
     { 
         "id": 1, 
-        "name": "Ghett", 
+        "name": "Jaina",
+        "image": "./images/jaina.png", 
         "clicked": false 
     },
     { 
         "id": 2, 
-        "name": "Will", 
+        "name": "Li-Ming", 
+        "image": "./images/liming.png",
         "clicked": false 
     },
     { 
         "id": 3, 
-        "name": "Travis", 
+        "name": "Maiev", 
+        "image": "./images/maiev.png",
         "clicked": false 
     },
     { 
         "id": 4, 
-        "name": "Stephen", 
+        "name": "Sonya", 
+        "image": "./images/sonya.png",
         "clicked": false 
     },
     { 
         "id": 5, 
-        "name": "Ed", 
+        "name": "Yrel", 
+        "image": "./images/yrel.png",
         "clicked": false 
     },
     { 
         "id": 6, 
-        "name": "Ryan", 
+        "name": "Li Li", 
+        "image": "./images/lili.png",
         "clicked": false 
     },
     { 
         "id": 7, 
-        "name": "Geno", 
+        "name": "Zagara", 
+        "image": "./images/zagara.png",
         "clicked": false 
     },
     { 
         "id": 8, 
-        "name": "Frank", 
+        "name": "Lunara", 
+        "image": "./images/lunara.png",
         "clicked": false 
     },
     { 
         "id": 9, 
-        "name": "Brian", 
-        "clicked": false },
+        "name": "Sylvanas", 
+        "image": "./images/sylvanas.png",
+        "clicked": false 
+    },
     { 
         "id": 10, 
-        "name": "Connor", 
+        "name": "Tyrande", 
+        "image": "./images/tyrande.png",
         "clicked": false 
     },
     { 
         "id": 11, 
-        "name": "Rebecca", 
+        "name": "Whitemane", 
+        "image": "./images/whitemane.png",
         "clicked": false 
     }
   ]
