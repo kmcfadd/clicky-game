@@ -16,17 +16,8 @@ class App extends Component {
         score: 0,
         topScore: 0
       }
-      this.gameLogic = this.gameLogic.bind(this)
+      this.clickChecker = this.clickChecker.bind(this)
   }
-  
-
-  // possible one event handler to contain both functions occuring on button click
-  // onClick (event) {
-  //   event.preventDefault();
-
-  //   this.arrayShuffle(this.state.pieces)
-  //   this.gameLogic()
-  // }
 
   // function to shuffle the array around and re-render the game pieces (hopefully...)
   shuffle () {
@@ -37,20 +28,14 @@ class App extends Component {
   componentDidMount () {
     this.shuffle();
   }
-
-  reset () {
-    const pieces = this.state.pieces.map(piece => piece.clicked = false )
-    this.setState( { pieces } )
-  }
-
   // primary logic behind the score system in the game
-  gameLogic = id => {
+  clickChecker = id => {
     let clickedPiece = this.state.pieces.filter(piece => piece.id === id)[0]
     let piecesCopy = this.state.pieces.slice().sort(() => .5 - Math.random())
 
     if (!clickedPiece.clicked) {
       clickedPiece.clicked = true;
-      piecesCopy[piecesCopy.findIndex((piece) => piece.id === id)] = clickedPiece;
+      piecesCopy[piecesCopy.findIndex(piece => piece.id === id)] = clickedPiece;
 
       this.setState({ 
         pieces: piecesCopy, 
@@ -59,7 +44,7 @@ class App extends Component {
       })
     }
     else {
-      let resetCopy = piecesCopy.map((piece) => {
+      let resetCopy = piecesCopy.map(piece => {
         return {
           id: piece.id,
           name: piece.name,
@@ -85,7 +70,7 @@ class App extends Component {
             id={piece.id}
             name={piece.name}
             clicked={piece.clicked}
-            click={this.gameLogic}
+            click={this.clickChecker}
             />
         })} 
         <Footer />

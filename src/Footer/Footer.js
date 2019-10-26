@@ -5,7 +5,7 @@ function Footer () {
 
     return (
         <div className="footer">
-            <p>This is a footer</p>
+            <p>Made in React</p>
         </div>
         
     )
