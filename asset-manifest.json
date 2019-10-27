@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/clicky-game/static/css/main.9c56e422.chunk.css",
+    "main.js": "/clicky-game/static/js/main.fcd428c2.chunk.js",
+    "main.js.map": "/clicky-game/static/js/main.fcd428c2.chunk.js.map",
+    "runtime-main.js": "/clicky-game/static/js/runtime-main.742e30a5.js",
+    "runtime-main.js.map": "/clicky-game/static/js/runtime-main.742e30a5.js.map",
+    "static/js/2.5943ade0.chunk.js": "/clicky-game/static/js/2.5943ade0.chunk.js",
+    "static/js/2.5943ade0.chunk.js.map": "/clicky-game/static/js/2.5943ade0.chunk.js.map",
+    "index.html": "/clicky-game/index.html",
+    "precache-manifest.59d9421344cb5f56e70ff0752d1c73cf.js": "/clicky-game/precache-manifest.59d9421344cb5f56e70ff0752d1c73cf.js",
+    "service-worker.js": "/clicky-game/service-worker.js",
+    "static/css/main.9c56e422.chunk.css.map": "/clicky-game/static/css/main.9c56e422.chunk.css.map",
+    "static/media/alex.png": "/clicky-game/static/media/alex.4cf8c72e.png",
+    "static/media/dva.png": "/clicky-game/static/media/dva.7eb6b400.png",
+    "static/media/heroesbg.jpg": "/clicky-game/static/media/heroesbg.f561e6b6.jpg",
+    "static/media/jaina.png": "/clicky-game/static/media/jaina.597b85f6.png",
+    "static/media/lili.png": "/clicky-game/static/media/lili.fec191ec.png",
+    "static/media/liming.png": "/clicky-game/static/media/liming.ab96da34.png",
+    "static/media/logo.svg": "/clicky-game/static/media/logo.25bf045c.svg",
+    "static/media/lunara.png": "/clicky-game/static/media/lunara.f46ddd60.png",
+    "static/media/maiev.png": "/clicky-game/static/media/maiev.e088911c.png",
+    "static/media/sonya.png": "/clicky-game/static/media/sonya.f1982277.png",
+    "static/media/sylvanas.png": "/clicky-game/static/media/sylvanas.79140447.png",
+    "static/media/tracer.png": "/clicky-game/static/media/tracer.b032df80.png",
+    "static/media/tyrande.png": "/clicky-game/static/media/tyrande.b0e9e552.png",
+    "static/media/valla.png": "/clicky-game/static/media/valla.767c584f.png",
+    "static/media/whitemane.png": "/clicky-game/static/media/whitemane.537a17ad.png",
+    "static/media/yrel.png": "/clicky-game/static/media/yrel.afe4278e.png",
+    "static/media/zagara.png": "/clicky-game/static/media/zagara.a6abb5a0.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.742e30a5.js",
+    "static/js/2.5943ade0.chunk.js",
+    "static/css/main.9c56e422.chunk.css",
+    "static/js/main.fcd428c2.chunk.js"
+  ]
+}
