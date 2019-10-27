@@ -5,7 +5,7 @@ function Footer () {
 
     return (
         <div className="footer">
-            <p>Made in React</p>
+            <p>Made with React &copy; Kyle McFadden</p>
         </div>
         
     )

@@ -1,7 +1,7 @@
 import React from 'react';
-import './Piece.css'
+import './Hero.css'
 
-function Piece ( props ) {
+function Hero ( props ) {
 
     return (
         <div className="hero-container">
@@ -15,4 +15,4 @@ function Piece ( props ) {
 
 }
 
-export default Piece;
+export default Hero;

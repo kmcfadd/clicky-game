@@ -1,14 +1,14 @@
 .hero-container {
-    border: 1px solid black;
-    width: 25%;
+    border: 1px solid #ccc;
+    width: 24%;
     display: inline-block;
     padding: 5px;
     margin: 15px;
     height: auto;
-    box-shadow: 5px 5px #ccc;
+    box-shadow: 5px 5px #000;;
 }
 
 .hero {
     width: 60%;
-    height: 80%;
+    height: 70%;
 }

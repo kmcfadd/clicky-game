@@ -2,27 +2,28 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
-import Piece from './Piece/Piece';
-import pieces from './pieces.json'
+import Hero from './Hero/Hero';
+import heroes from './heroes.json'
+import Background from './images/heroesbg.jpg';
 
 class App extends Component {
-  // state with our test pieces for the game and scores
+  // state with our test heroes for the game and scores
   constructor (props) {
 
       super(props);
       this.state = 
       { 
-        pieces: pieces,
+        heroes: heroes,
         score: 0,
         topScore: 0
       }
       this.clickChecker = this.clickChecker.bind(this)
   }
 
-  // function to shuffle the array around and re-render the game pieces (hopefully...)
+  // function to shuffle the array around and re-render the game heroes (hopefully...)
   shuffle () {
-    const pieces = this.state.pieces.sort(() => .5 - Math.random())
-    this.setState( { pieces } )
+    const heroes = this.state.heroes.sort(() => .5 - Math.random())
+    this.setState( { heroes } )
   }
 
   componentDidMount () {
@@ -30,39 +31,42 @@ class App extends Component {
   }
   // primary logic behind the score system in the game
   clickChecker = id => {
-    let clickedPiece = this.state.pieces.filter(piece => piece.id === id)[0]
-    let piecesCopy = this.state.pieces.slice().sort(() => .5 - Math.random())
+    let clickedhero = this.state.heroes.filter(hero => hero.id === id)[0]
+    let heroesCopy = this.state.heroes.slice().sort(() => .5 - Math.random())
 
-    if (!clickedPiece.clicked) {
-      clickedPiece.clicked = true;
-      piecesCopy[piecesCopy.findIndex(piece => piece.id === id)] = clickedPiece;
+    if (!clickedhero.clicked) {
+      clickedhero.clicked = true;
+      heroesCopy[heroesCopy.findIndex(hero => hero.id === id)] = clickedhero;
 
       this.setState({ 
-        pieces: piecesCopy, 
+        heroes: heroesCopy, 
         score: this.state.score + 1,
         topScore: (this.state.score +1 > this.state.topScore ? this.state.score +1 : this.state.topScore)
       })
     }
     else {
-      let resetCopy = piecesCopy.map(piece => {
+      let resetCopy = heroesCopy.map(hero => {
         return {
-          id: piece.id,
-          name: piece.name,
-          image: piece.image,
+          id: hero.id,
+          name: hero.name,
+          image: hero.image,
           clicked: false
         }
       })
       this.setState({
-        pieces: resetCopy, score: 0
+        heroes: resetCopy, score: 0
       })
     }
   }
   
   render () {
 
-    const style = {
+    const wrapper = {
+      paddingTop: "50px",
       paddingBottom: "50px",
-      margin: "0 auto"
+      margin: "0 auto",
+      backgroundImage: `url(${Background})`,
+      backgroundSize: 'cover'
   }
 
     return (
@@ -71,14 +75,14 @@ class App extends Component {
         score={this.state.score}
         topScore={this.state.topScore} 
         />
-      <div style={style}>
-        {this.state.pieces.map((piece, id) => {
-           return <Piece
-            key={piece.id}
-            id={piece.id}
-            name={piece.name}
-            image={require(`${piece.image}`)}
-            clicked={piece.clicked}
+      <div style={wrapper}>
+        {this.state.heroes.map((hero, id) => {
+           return <Hero
+            key={hero.id}
+            id={hero.id}
+            name={hero.name}
+            image={require(`${hero.image}`)}
+            clicked={hero.clicked}
             click={this.clickChecker}
             />
         })} 

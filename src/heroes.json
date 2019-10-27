@@ -70,5 +70,23 @@
         "name": "Whitemane", 
         "image": "./images/whitemane.png",
         "clicked": false 
+    },
+    { 
+        "id": 12, 
+        "name": "Alexstrasza", 
+        "image": "./images/alex.png",
+        "clicked": false 
+    },
+    { 
+        "id": 13, 
+        "name": "Tracer", 
+        "image": "./images/tracer.png",
+        "clicked": false 
+    },
+    { 
+        "id": 14, 
+        "name": "D.Va", 
+        "image": "./images/dva.png",
+        "clicked": false 
     }
   ]
